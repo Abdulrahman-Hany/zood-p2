@@ -1,0 +1,804 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Rische';
+  src: url('./font/rische-demo.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  overflow-x: hidden;
+  /* font-family: 'Rische', sans-serif; */
+}
+
+.backdrop-header {
+  @apply backdrop-blur-md bg-white/10 shadow-md;
+}
+
+.background-bluer {
+  border-radius: 17px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(153, 153, 153, 0.06) 100%);
+}
+
+.phases-scroll {
+  -ms-overflow-style: none;
+  /* للـ IE و Edge القديم */
+  scrollbar-width: none;
+  /* للـ Firefox */
+}
+
+.phases-scroll::-webkit-scrollbar {
+  display: none;
+  /* للـ Chrome و Safari */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gallery-container {
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.gallery-row {
+  display: flex;
+  gap: .7rem;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+}
+
+.row-left {
+  animation: scrollLeft 30s linear infinite;
+}
+
+.row-right {
+  animation: scrollRight 35s linear infinite;
+}
+
+.row-left-slow {
+  animation: scrollLeft 40s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.image-card {
+  flex-shrink: 0;
+  border-radius: .3rem;
+  overflow: hidden;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.image-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent); */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.image-card:hover::before {
+  opacity: 1;
+}
+
+.image-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #A37166;
+  transition: background-color 0.3s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Row 1: 4 equal images */
+.row-1 .image-card,
+.row-2 .image-card,
+.row-3 .image-card {
+  width: 280px;
+  height: 350px;
+}
+
+.row-1 .image-card.two-img,
+.row-2 .image-card.two-img,
+.row-3 .image-card.two-img {
+  width: 440px !important;
+  height: 350px;
+}
+
+/* Duplicate content for seamless loop */
+.gallery-row {
+  display: flex;
+  align-items: center;
+}
+
+/* Pause animation on hover */
+.gallery-row:hover {
+  animation-play-state: paused;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+
+  .row-1 .image-card,
+  .row-2 .image-card,
+  .row-3 .image-card {
+    width: 200px !important;
+    height: 250px !important;
+  }
+
+  .gallery-row {
+    gap: 1rem;
+  }
+}
+
+
+.ti-brand-facebook::before {
+  content: '\ea8d';
+}
+
+.ti-brand-instagram::before {
+  content: '\ea92';
+}
+
+.ti-brand-linkedin::before {
+  content: '\ea9d';
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#area-of-interest,
+#contact-details {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+  display: none;
+}
+
+
+/* Custom Select Styling */
+.custom-select {
+  appearance: none;
+  padding-right: 32px;
+  padding-left: 12px;
+}
+
+.custom-select:focus {
+  outline: none;
+}
+
+.custom-select option {
+  background-color: #374151;
+  color: white;
+  padding: 8px;
+}
+
+.custom-select option:hover {
+  background-color: #4b5563;
+}
+
+/* Placeholder styling */
+.custom-select option[value=""] {
+  color: #ffffff;
+}
+
+
+.phone-icon {
+  width: 14px;
+  height: 19px;
+  fill: #fff;
+  position: absolute;
+  left: 15px;
+  top: 12px;
+}
+
+.location-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.hours-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+/* Custom scrollbar styling */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.accordion-content.active {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.accordion-arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.architecture-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.architecture-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.ti-brand-facebook::before {
+  content: '\ea8d';
+}
+
+.ti-brand-instagram::before {
+  content: '\ea92';
+}
+
+.ti-brand-linkedin::before {
+  content: '\ea9d';
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#area-of-interest,
+#contact-details {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+  display: none;
+}
+
+
+/* Custom Select Styling */
+.custom-select {
+  appearance: none;
+  padding-right: 32px;
+  padding-left: 12px;
+}
+
+.custom-select:focus {
+  outline: none;
+}
+
+.custom-select option {
+  background-color: #374151;
+  color: white;
+  padding: 8px;
+}
+
+.custom-select option:hover {
+  background-color: #4b5563;
+}
+
+/* Placeholder styling */
+.custom-select option[value=""] {
+  color: #ffffff;
+}
+
+
+.phone-icon {
+  width: 14px;
+  height: 19px;
+  fill: #fff;
+  position: absolute;
+  left: 15px;
+  top: 12px;
+}
+
+.location-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.hours-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+/* Custom scrollbar styling */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.accordion-content.active {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.accordion-arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.architecture-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.architecture-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Base Styles */
+.ti-brand-facebook::before {
+  content: '\ea8d';
+}
+
+.ti-brand-instagram::before {
+  content: '\ea92';
+}
+
+.ti-brand-linkedin::before {
+  content: '\ea9d';
+}
+
+/* Swiper Styles */
+.swiper {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Form Elements */
+#area-of-interest,
+#contact-details {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+  display: none;
+}
+
+/* Custom Select Styling */
+.custom-select {
+  appearance: none;
+  padding-right: 32px;
+  padding-left: 12px;
+}
+
+.custom-select:focus {
+  outline: none;
+}
+
+.custom-select option {
+  background-color: #374151;
+  color: white;
+  padding: 8px;
+}
+
+.custom-select option:hover {
+  background-color: #4b5563;
+}
+
+.custom-select option[value=""] {
+  color: #ffffff;
+}
+
+/* Icons */
+.phone-icon {
+  width: 14px;
+  height: 19px;
+  fill: #fff;
+  position: absolute;
+  left: 15px;
+  top: 12px;
+}
+
+.location-icon,
+.hours-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Scrollbar */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Accordion */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.accordion-content.active {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.accordion-arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/* Card Hover Effects */
+.architecture-card,
+.blog-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.architecture-card:hover,
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Modern Enhancements ===== */
+
+/* Dynamic Background System */
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 2;
+}
+
+/* Active Background Indicator */
+.background-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Project Gallery */
+.project-gallery {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.project-image:hover::before {
+  opacity: 1;
+}
+
+.project-image:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-image.active {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Next Project Button */
+.next-project-btn {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.next-project-btn:hover::before {
+  width: 120px;
+  height: 120px;
+}
+
+/* Content Animation */
+.content-transition {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-fade-out {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.content-fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* Scrolled Header */
+.header-scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.card-pop {
+  @apply fixed top-24 left-1/2 -translate-x-1/2 z-[99999999999] flex flex-col px-7 pt-12 pb-4 bg-[#0000009e] backdrop-blur-md w-[97%] rounded-2xl min-h-[405px] max-md:px-5 max-md:max-w-full opacity-0 scale-95 pointer-events-none transition-all duration-300;
+}
+
+.mobile-menu.open {
+  display: block;
+}

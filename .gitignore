@@ -1,0 +1,13 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist/
+output.css
+
+# IDE
+.vscode/
+.DS_Store
+.env
