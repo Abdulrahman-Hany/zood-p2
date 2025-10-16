@@ -128,15 +128,15 @@ html {
 }
 
 .image-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 /* Row 1: 4 equal images */
 .row-1 .image-card,
 .row-2 .image-card,
 .row-3 .image-card {
-  width: 280px;
-  height: 350px;
+  width: 359px;
+  height: 449px;
 }
 
 .row-1 .image-card.two-img,

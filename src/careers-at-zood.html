@@ -42,7 +42,7 @@
     <!-- Custom CSS Files -->
     <link rel="stylesheet" href="input.css" />
     <link rel="stylesheet" href="../dist/output.css" />
-        <!-- AOS -->
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
@@ -603,12 +603,14 @@
                 class="self-center mt-12 ml-8 text-6xl font-rische tracking-widest leading-none text-center text-stone-900 max-md:mt-10 max-md:max-w-full max-md:text-4xl">
                 Senior Designer
             </h1>
-            <p data-aos="fade-up" data-aos-duration="2600" class="w-[95%] md:w-[50%] mx-auto text-center mt-4 text-[#001E44] text-sm">od, we’re building a culture
+            <p data-aos="fade-up" data-aos-duration="2600"
+                class="w-[95%] md:w-[50%] mx-auto text-center mt-4 text-[#001E44] text-sm">od, we’re building a culture
                 of
                 innovation, sustainability, and collaboration. You’ll work alongside passionate teams driving projects
                 that create positive environmental and social impact globally.</p>
 
-            <main class="text-lg md:text-xl text-stone-900 px-5 xl:px-32 mt-20" data-aos="fade-up" data-aos-duration="2600">
+            <main class="text-lg md:text-xl text-stone-900 px-5 xl:px-32 mt-20" data-aos="fade-up"
+                data-aos-duration="2600">
                 <div class="mt-0 max-md:max-w-full">
                     <h2 style="font-weight: 800; color: rgba(30, 30, 30, 1)">
                         1. General Disclaimer
@@ -732,10 +734,59 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- City and Nationality Fields -->
+                        <div
+                            class="flex flex-wrap gap-8 self-stretch mt-10 text-base font-normal uppercase max-md:mt-10 max-md:max-w-full max-sm:flex-col">
+                            <!-- City -->
+                            <div class="flex flex-col grow shrink-0 items-start max-w-full basis-0 md:w-fit">
+                                <label class="text-sky-950 font-semibold">CITY</label>
+                                <div class="flex justify-between items-center w-full">
+
+                                    <select
+                                        class="mt-1.5 w-full text-gray-400 bg-transparent border-none outline-none appearance-none">
+                                        <option selected disabled>Select City</option>
+                                        <option>Jeddah</option>
+                                        <option>Riyadh</option>
+                                        <option>Dammam</option>
+                                    </select>
+                                    <svg width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.5 5.09601L1.3354 0.931402C1.2598 0.845993 1.16563 0.779044 1.06012 0.735696C0.95462 0.692348 0.840586 0.673754 0.726776 0.681341C0.612967 0.688928 0.502409 0.722495 0.403593 0.779465C0.304776 0.836434 0.220329 0.91529 0.156735 1.00998C0.0425949 1.16765 -0.0121241 1.36061 0.00225544 1.55473C0.0166349 1.74885 0.099185 1.93164 0.235312 2.07077L4.94996 6.74613C5.01989 6.82235 5.10489 6.8832 5.19958 6.92482C5.29426 6.96645 5.39657 6.98794 5.5 6.98794C5.60343 6.98794 5.70574 6.96645 5.80042 6.92482C5.89511 6.8832 5.98011 6.82235 6.05004 6.74613L10.7647 2.07077C10.9008 1.93164 10.9834 1.74885 10.9977 1.55473C11.0121 1.36061 10.9574 1.16765 10.8433 1.00998C10.7797 0.91529 10.6952 0.836434 10.5964 0.779465C10.4976 0.722495 10.387 0.688928 10.2732 0.681341C10.1594 0.673754 10.0454 0.692348 9.93988 0.735696C9.83437 0.779044 9.7402 0.845993 9.6646 0.931402L5.5 5.09601Z"
+                                            fill="#B3B3B3" />
+                                    </svg>
+                                </div>
+                                <div class="mt-2 w-full h-[1px] bg-slate-900 bg-opacity-10 rounded-[48px]"></div>
+                            </div>
+
+                            <!-- Nationality -->
+                            <div class="flex flex-col flex-1 grow shrink-0 items-start basis-0 md:w-fit">
+                                <label class="text-sky-950 font-semibold">NATIONALITY</label>
+                                <div class="flex justify-between items-center w-full">
+                                    <select
+                                        class="mt-1.5 w-full text-gray-400 bg-transparent border-none outline-none appearance-none">
+                                        <option selected disabled>Select Nationality</option>
+                                        <option>Saudi</option>
+                                        <option>Egyptian</option>
+                                        <option>Jordanian</option>
+                                        <option>Indian</option>
+                                    </select>
+                                    <svg width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.5 5.09601L1.3354 0.931402C1.2598 0.845993 1.16563 0.779044 1.06012 0.735696C0.95462 0.692348 0.840586 0.673754 0.726776 0.681341C0.612967 0.688928 0.502409 0.722495 0.403593 0.779465C0.304776 0.836434 0.220329 0.91529 0.156735 1.00998C0.0425949 1.16765 -0.0121241 1.36061 0.00225544 1.55473C0.0166349 1.74885 0.099185 1.93164 0.235312 2.07077L4.94996 6.74613C5.01989 6.82235 5.10489 6.8832 5.19958 6.92482C5.29426 6.96645 5.39657 6.98794 5.5 6.98794C5.60343 6.98794 5.70574 6.96645 5.80042 6.92482C5.89511 6.8832 5.98011 6.82235 6.05004 6.74613L10.7647 2.07077C10.9008 1.93164 10.9834 1.74885 10.9977 1.55473C11.0121 1.36061 10.9574 1.16765 10.8433 1.00998C10.7797 0.91529 10.6952 0.836434 10.5964 0.779465C10.4976 0.722495 10.387 0.688928 10.2732 0.681341C10.1594 0.673754 10.0454 0.692348 9.93988 0.735696C9.83437 0.779044 9.7402 0.845993 9.6646 0.931402L5.5 5.09601Z"
+                                            fill="#B3B3B3" />
+                                    </svg>
+                                </div>
+
+                                <div class="mt-2 w-full h-[1px] bg-slate-900 bg-opacity-10 rounded-[48px]"></div>
+                            </div>
+                        </div>
+
 
                         <!-- Message Field -->
                         <div class="w-full">
-                            <label class="mt-5 text-base font-normal uppercase text-sky-950 block">Message</label>
+                            <label class="mt-10 text-base font-normal uppercase text-sky-950 block">Message</label>
                             <textarea placeholder="Enter Messege"
                                 class="mt-1.5 text-base font-normal uppercase text-text-black bg-transparent border-none outline-none w-full resize-none"
                                 rows="6"></textarea>
@@ -801,7 +852,7 @@
                                 alt="Phone icon" class="object-contain shrink-0 aspect-square w-[50px]" />
                             <div class="flex flex-col self-start">
                                 <div class="text-base leading-none">Call us anytime</div>
-                                <div class="self-start text-lg mt-2 font-normal leading-none">+44 987465</div>
+                                <a href="tel:+44987465" class="self-start text-lg mt-2 font-normal leading-none text-sky-950"> +44 987465 </a>
                             </div>
                         </div>
 
@@ -811,8 +862,9 @@
                                 alt="Email icon" class="object-contain shrink-0 aspect-[1.08] w-[54px]" />
                             <div class="flex flex-col self-start">
                                 <div class="text-base leading-none text-teal-950">Direct us anytime</div>
-                                <div class="self-start text-lg mt-2 font-normal leading-none text-sky-950">zood.sa.com
-                                </div>
+                                <a href="#"
+                                    class="self-start text-lg mt-2 font-normal leading-none text-sky-950">zood.sa.com
+                                </a>
                             </div>
                         </div>
                     </div>
